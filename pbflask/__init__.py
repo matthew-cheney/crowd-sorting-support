@@ -14,8 +14,11 @@ def home():
         print('in get')
     else:
         print(f'or in {request.method}')
-    with open('req_pickle.pkl', 'wb') as f:
-        pickle.dump(request, file=f)
+    print(f'request: {request}\n'
+          f'json: {request.json}\n'
+          f'form: {request.form}\n'
+          f'data: {request.data}')
+
     return 'Hello, world!'
 
 print('done')
