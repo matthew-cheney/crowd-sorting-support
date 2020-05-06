@@ -1,4 +1,5 @@
 from flask import Flask, request
+import pickle
 
 print('initializing app')
 app = Flask(__name__)
@@ -13,7 +14,8 @@ def home():
         print('in get')
     else:
         print(f'or in {request.method}')
-    print(request.form)
+    with open('req_pickle.pkl', 'wb') as f:
+        pickle.dump(request, file=f)
     return 'Hello, world!'
 
 print('done')
