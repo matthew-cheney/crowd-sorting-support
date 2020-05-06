@@ -13,6 +13,7 @@ def home():
         print('in get')
     else:
         print(f'or in {request.method}')
+    print(request.form)
     return 'Hello, world!'
 
 print('done')
